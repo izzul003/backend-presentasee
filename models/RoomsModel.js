@@ -1,8 +1,8 @@
 const db = require('../config')
 
 const RoomSchema = new db.Schema({
-  name: {type: String, required: true},
-  file: {type: String, required: true},
+  title: {type: String, required: true},
+  fileUrl: {type: String},
   date: {type: Number, default: Date.now()},
 })
 

@@ -26,6 +26,15 @@ module.exports = class UserController {
     }
   }
 
+  static async login (req, res, next){
+    try {
+      const {email, password} = req.body
+      
+    } catch (error) {
+      
+    }
+  }
+
   static async update(req, res, next){
     try {
       const {_id} = req.params
