@@ -73,4 +73,17 @@ module.exports = class RoomController {
       res.status(500).json({error})
     }
   }
+
+  static async joinRoom (req, res, next) {
+    try {
+      const _id = req.body.RoomId
+      const lastTotalJoin = await RoomModel.findOne({_id})
+      const updatedTotalJoin = await RoomModel.findOneAndUpdate({_id},{
+        joinned: +lastTotalJoin + 1
+      }, {new: true})
+      res.status(200).json({updatedTotalJoin})
+    } catch (error) {
+      res.status(500).json({error})
+    }
+  }
 }

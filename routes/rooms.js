@@ -16,5 +16,5 @@ const upload = multer({ storage });
 router.get('/', RoomController.read);
 router.post('/new', RoomController.create);
 router.put('/upload/:_id',upload.single('file'), RoomController.uploadFile);
-
+router.post('/join', RoomController.joinRoom)
 module.exports = router;
